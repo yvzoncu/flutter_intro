@@ -269,7 +269,8 @@ class Intro {
 
   /// Destroy the guide page and release all resources
   void dispose() {
-    _removed = true;
+       _overlayEntry.remove();
+      _overlayEntry = null;
   
 
   }
