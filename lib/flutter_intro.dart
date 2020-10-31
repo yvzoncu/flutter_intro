@@ -269,8 +269,12 @@ class Intro {
 
   /// Destroy the guide page and release all resources
   void dispose() {
-       _overlayEntry.remove();
+   _removed = true;
+    _overlayEntry.markNeedsBuild();
+    Timer(_animationDuration, () {
+      _overlayEntry.remove();
       _overlayEntry = null;
+    });
   
 
   }
